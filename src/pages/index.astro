@@ -1,0 +1,367 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Header from '~/components/widgets/Header.astro';
+
+import leoProfil from '~/assets/images/leo.png';
+import haribo from '~/assets/images/HARIBO.png';
+import perleDuNord from '~/assets/images/pdn.png';
+import polenergie from '~/assets/images/polenergie.png';
+
+const metadata = {
+  title: 'Léo DEMET - Développeur Fullstack',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'A propos', href: '#a-propos' },
+        { text: 'Expériences', href: '#experiences' },
+        { text: 'Compétences', href: '#competences' },
+        { text: 'Projets', href: '#projets' },
+        { text: 'Contactez-moi', href: '#contact' },
+      ]}
+      actions={[
+        {
+          text: 'Télécharger mon CV',
+          href: 'https://cvdesignr.com/p/670a3f616acec?hl=fr_FR',
+          target: '_blank',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Télécharger mon CV',
+        href: 'https://cvdesignr.com/p/670a3f616acec?hl=fr_FR',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'En savoir plus', href: '#a-propos' },
+    ]}
+  >
+    <Fragment slot="title">
+      Léo Demet<br />
+      <span class="text-accent dark:text-white highlight">Développeur Fullstack</span><br />
+
+      <!--       <span class="dark:text-white highlight">créateur de solutions web performantes et innovantes</span>
+ -->
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Passionné par la création de solutions web performantes, je suis spécialisé en <span class="font-semibold">
+          développement Fullstack
+        </span>
+        . Découvrez mes projets, compétences et parcours pour en savoir plus sur mon expertise et mes réalisations.
+      </span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">Portfolio: Découvrez mon travail.</span>
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="a-propos"
+    columns={3}
+    image={{
+      src: leoProfil,
+      alt: 'Léo DEMET',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">À propos de moi</h2>
+      <p>
+        Développeur web depuis 2018, je suis passionné par la création de solutions digitales innovantes. Mon expertise
+        en développement Fullstack, que j'ai pu affiner au fil de mes expériences professionnelles, me permet de
+        transformer des idées en applications concrètes. Je suis constamment à la recherche de nouveaux défis
+        technologiques et d'opportunités pour mettre en pratique mes compétences variées, allant de PHP à ReactJS.
+      </p>
+      <br />
+      <p>
+        Que ce soit en télétravail ou en présentiel, j'aime travailler sur des projets diversifiés où la créativité et
+        la technique se rejoignent. En dehors du développement, je nourris mon inspiration à travers mes passions pour
+        la moto, la guitare, les jeux vidéo et la cuisine.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Widget Expériences professionnelles ****************** -->
+
+  <Steps
+    id="experiences"
+    title="Expériences professionnelles"
+    items={[
+      {
+        title:
+          'Développeur Fullstack <br /> <span class="font-normal">Becoming, Lille</span> <br /> <span class="text-sm font-normal">Depuis mars 2022</span>',
+        description: `Conception et développement d'applications web. <br /> Respect des maquettes fournies. <br /> Utilisation de technologies variées comme PHP, Wordpress, ReactJS et NodeJS. <br /> Maintenance et résolution des bugs. <br /> Formation des nouveaux membres de l'équipe.`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Développeur Fullstack <br /> <span class="font-normal">BigBizYou, Roubaix</span> <br /> <span class="text-sm font-normal">Juillet 2021 - Février 2022</span>',
+        description: `Participation au développement de solutions web avec Symfony. <br /> Implémentation de fonctionnalités selon les besoins du client.`,
+        icon: 'tabler:briefcase',
+      },
+      /*  {
+        title:
+          'Développeur Symfony <br /> <span class="font-normal">Book d\'oreille, Lille</span> <br /> <span class="text-sm font-normal">Avril 2021 - Juin 2021</span>',
+        description: `Développement de fonctionnalités spécifiques pour le projet web de l'entreprise.`,
+        icon: 'tabler:briefcase',
+      }, */
+      {
+        title:
+          'Développeur Web <br /> <span class="font-normal">NiceToMeetYou, Lille</span> <br /> <span class="text-sm font-normal">Avril 2018 - Juillet 2020</span>',
+        description: `Développement et maintenance de sites web. <br /> Intégration de maquettes en HTML/CSS/JS.`,
+        icon: 'tabler:briefcase',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- Widget Formation ****************** -->
+
+  <Steps
+    id="experiences"
+    title="Formation"
+    items={[
+      {
+        title: `Titre professionnel - Concepteur Développeur d'applications <br /> <span class="font-normal">M2I, Villeneuve-d'Ascq</span> <br /> <span class="text-sm font-normal">Novembre 2020 - Juin 2021</span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `Titre professionnel - Développeur Logiciel / Web <br /> <span class="font-normal">AFPA, Roubaix</span> <br /> <span class="text-sm font-normal">Mai 2017 - Mars 2018</span>`,
+        icon: 'tabler:school',
+      },
+      /* {
+        title: `Bac professionnel Hôtellerie / Restauration - Spécialité cuisine <br /> <span class="font-normal">Lycée Île de Flandre, Armentières</span> <br /> <span class="text-sm font-normal">Septembre 2009 - Juillet 2012</span>`,
+        icon: 'tabler:school',
+      }, */
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- Widget Compétences ****************** -->
+
+  <Features3
+    id="competences"
+    title="Compétences"
+    subtitle="Découvrez mes compétences techniques complètes en développement web et opérations."
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'Développement Front-end',
+        description:
+          "Expertise en ReactJS, HTML5, CSS3, SCSS. Création d'interfaces réactives et intuitives avec une attention particulière à l'expérience utilisateur.",
+      },
+      {
+        title: 'Développement Back-end',
+        description:
+          'Maîtrise de PHP, Wordpress, Symfony, et NodeJS pour développer des applications robustes et évolutives.',
+      },
+      {
+        title: 'Bases de données',
+        description:
+          'Conception et optimisation de bases de données MySQL et PostgreSQL. Gestion efficace des requêtes et de la performance.',
+      },
+      {
+        title: 'Emailing & Communication',
+        description:
+          "Création et intégration de templates d'emails responsifs. Gestion des campagnes d'emailing et optimisation des taux de délivrance.",
+      },
+      {
+        title: 'DevOps & Production',
+        description:
+          "Configuration et gestion des DNS, déploiement d'applications, maintenance des serveurs et mise en production sécurisée.",
+      },
+      {
+        title: 'Intégration & API',
+        description:
+          "Développement et consommation d'APIs RESTful. Intégration de services tiers et création de solutions interconnectées.",
+      },
+      {
+        title: 'Gestion de Projet',
+        description:
+          'Utilisation de Git pour le versioning, collaboration en équipe, et suivi de projets avec méthodologies agiles.',
+      },
+      {
+        title: 'Performance & SEO',
+        description:
+          'Optimisation des performances web, respect des bonnes pratiques SEO, et amélioration de la visibilité des sites.',
+      },
+      {
+        title: 'Veille Technologique',
+        description:
+          'Apprentissage continu des nouvelles technologies et frameworks. Adaptation rapide aux évolutions du secteur.',
+      },
+    ]}
+  />
+
+  <Content
+    id="projets"
+    title="Quelques exemples de projets"
+    subtitle="Découvrez mes projets et solutions web, alliant créativité et performance pour répondre à divers besoins numériques."
+    isReversed
+    items={[
+      {
+        title: 'Description :',
+        description:
+          "Conception et développement annuel d'expériences digitales immersives à l'occasion d'Halloween, spécialement conçues pour les enfants. Chaque édition propose un univers unique et des mécaniques de jeu innovantes, offrant une expérience ludique toujours renouvelée.",
+      },
+      {
+        title: 'Rôle :',
+        description:
+          "De 2022 à 2024, j'ai été en charge de la création complète de ces expériences digitales, de la conception des interfaces à la mise en place des fonctionnalités interactives. J'ai notamment exploré différentes technologies (JavaScript, React.js, SCSS) pour offrir une expérience utilisateur toujours plus fluide et dynamique.",
+      },
+    ]}
+    image={{
+      src: haribo,
+      alt: 'Haribo Halloween',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Voir le site',
+      icon: 'tabler:chevron-right',
+      href: 'https://www.haribo-halloween.com/',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Haribo, les mystères d'halloween <br /><span class="text-2xl">Site expérience + jeu concours </span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description :',
+        description:
+          "Développement complet d'un site web sur mesure, alliant design personnalisé et fonctionnalités avancées. Le site propose une interface intuitive pour la consultation et le filtrage de recettes, développée avec un thème WordPress customisé et des technologies modernes.",
+      },
+      {
+        title: 'Rôle :',
+        description:
+          "Création d'une expérience utilisateur fluide grâce à un système de filtrage avancé, développement d'une interface soignée avec SCSS.",
+      },
+    ]}
+    image={{
+      src: perleDuNord,
+      alt: 'Pele du nord',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Voir le site',
+      icon: 'tabler:chevron-right',
+      href: 'https://www.perledunord.com/',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Perle du nord <br /><span class="text-2xl">Vitrine et recettes</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description:',
+        description: `Développement d'un thème WordPress personnalisé pour Polenergie, une association spécialisée dans la transition énergétique. L'objectif était de créer une plateforme web moderne intégrant à la fois un site vitrine informatif et un espace adhérent sécurisé.`,
+      },
+      {
+        title: 'Role:',
+        description: `Conception et développement intégral d'un thème WordPress sur mesure. Mise en place d'un middle-office sophistiqué permettant la gestion des adhérents et de leurs données. Création d'une interface intuitive pour faciliter l'administration du site et l'accès aux ressources dédiées aux membres.`,
+      },
+    ]}
+    image={{
+      src: polenergie,
+      alt: 'Pôlénergie',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Voir le site',
+      icon: 'tabler:chevron-right',
+      href: 'https://polenergie.org/',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Pôlénergie <br /><span class="text-2xl">Vitrine et espace adhérents</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps2
+    id="contact"
+    title="Me contacter"
+    {/* subtitle="Des questions ? N'hésitez pas à me contacter via le formulaire en lien ci-dessous.<br/>Ou envoyer moi un mail, un message ou contactez moi directement sur Linkedin. Je suis à votre disposition !"
+    */}
+    subtitle="Des questions ?<br/> Envoyez-moi un mail, un message ou contactez moi directement sur Linkedin. Je suis à votre disposition !"
+    {/* callToAction={{
+      text: 'Me contacter',
+      href: '/contact',
+    }} */}
+    items={[
+      {
+        title: 'Envoyez-moi un email',
+        description: 'demetleo@hotmail.fr',
+        icon: 'tabler:mail',
+        link: 'mailto:demetleo@hotmail.fr',
+      },
+      {
+        title: 'Appelez-moi',
+        description: '+33 6 67 99 64 41',
+        icon: 'tabler:headset',
+        link: 'tel:+33 6 67 99 64 41',
+      },
+      {
+        title: 'Suivez-moi',
+        description: 'leo-demet',
+        icon: 'tabler:brand-linkedin',
+        link: 'https://www.linkedin.com/in/leo-demet/',
+      },
+    ]}
+  />
+</Layout>
