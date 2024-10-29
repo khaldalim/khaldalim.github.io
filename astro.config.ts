@@ -23,7 +23,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   site: 'https://khaldalim.github.io',
-  output: 'hybrid',
+  output: 'static',
 
   integrations: [
     tailwind({
