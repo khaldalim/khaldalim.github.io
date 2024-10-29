@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://khaldalim.github.io/sitemap-index.xml
